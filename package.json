@@ -1,0 +1,14 @@
+{
+  "name": "drsim-desktop",
+  "private": true,
+  "version": "1.1.0",
+  "description": "DELTARUNE Fight Simulator desktop launcher (Tauri 2)",
+  "scripts": {
+    "prep": "node scripts/prep-ui.mjs",
+    "dev": "node scripts/prep-ui.mjs && tauri dev",
+    "build": "node scripts/prep-ui.mjs && tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.12.1"
+  }
+}

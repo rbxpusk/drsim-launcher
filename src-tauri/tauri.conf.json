@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "DELTARUNE Fight Simulator",
+  "mainBinaryName": "DRFightSim",
+  "version": "1.1.0",
+  "identifier": "com.deltarunesim.launcher",
+  "build": {
+    "frontendDist": "../ui-dist",
+    "beforeBuildCommand": "node scripts/prep-ui.mjs",
+    "beforeDevCommand": "node scripts/prep-ui.mjs"
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [],
+    "security": {
+      "csp": {
+        "default-src": "'self'",
+        "script-src": "'self'",
+        "style-src": "'self' 'unsafe-inline'",
+        "img-src": "'self' data: blob:",
+        "media-src": "'self'",
+        "connect-src": "'self' ipc: http://ipc.localhost",
+        "base-uri": "'none'",
+        "form-action": "'none'",
+        "object-src": "'none'"
+      },
+      "freezePrototype": true
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis",
+      "deb",
+      "appimage"
+    ],
+    "createUpdaterArtifacts": true,
+    "publisher": "deltarunesim.com",
+    "homepage": "https://deltarunesim.com/",
+    "copyright": "Unofficial fan-made project. DELTARUNE and UNDERTALE (c) Toby Fox. Not affiliated.",
+    "category": "Game",
+    "shortDescription": "DELTARUNE Fight Simulator",
+    "longDescription": "The DELTARUNE Fight Simulator (deltarunesim.com) as a desktop app: downloads the game once, keeps it up to date, and plays offline.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.png",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "webviewInstallMode": {
+        "type": "downloadBootstrapper",
+        "silent": true
+      },
+      "nsis": {
+        "installMode": "currentUser",
+        "displayLanguageSelector": false,
+        "installerIcon": "icons/icon.ico",
+        "compression": "lzma",
+        "startMenuFolder": "DELTARUNE Fight Simulator",
+        "template": "installer/installer.nsi"
+      }
+    },
+    "linux": {
+      "deb": {
+        "depends": []
+      },
+      "appimage": {
+        "bundleMediaFramework": true
+      }
+    }
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEU2M0U1NzZCREVFQzkwNzEKUldSeGtPemVhMWMrNWhPdnIxcEs3S0ZseGdGL3VNNzZGNmIxOTVqQVVBb2g4TjdXTUtkN2padVQK",
+      "endpoints": [
+        "https://deltarunesim.com/desktop/latest.json"
+      ],
+      "windows": {
+        "installMode": "passive"
+      }
+    }
+  }
+}

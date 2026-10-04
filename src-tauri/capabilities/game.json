@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "game",
+  "description": "The game window (the site's own build): it can tell the launcher what is on screen (Discord status) and toggle fullscreen (F11). Nothing else.",
+  "windows": ["game"],
+  "permissions": ["allow-presence", "allow-game-fullscreen"]
+}

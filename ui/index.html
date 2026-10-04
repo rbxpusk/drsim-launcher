@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="dark">
+<title>DELTARUNE Fight Simulator</title>
+<link rel="stylesheet" href="launcher.css">
+<script type="module" src="launcher.js"></script>
+</head>
+<body class="splash">
+<div id="app">
+  <div id="art" aria-hidden="true"><i class="l sky"></i><i class="l city"></i><i class="l lights"></i></div>
+  <div id="shade" aria-hidden="true"></div>
+
+  <header id="bar" data-tauri-drag-region>
+    <img id="bar-soul" src="kit/heart.png" width="16" height="16" alt="" data-tauri-drag-region>
+    <span class="grow" data-tauri-drag-region></span>
+    <nav id="links" class="ctl" aria-label="Menu"><button id="l-notes" class="lk"></button><button id="l-config" class="lk"></button></nav>
+    <button id="w-discord" class="wb" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18.2 18.2 0 0 0-5.6 0L8.6 3a19.5 19.5 0 0 0-4.9 1.4C.6 9.1-.3 13.6.1 18.1a19.8 19.8 0 0 0 6 3l1.3-2a12.8 12.8 0 0 1-2-1l.5-.4a14 14 0 0 0 12.2 0l.5.4c-.6.4-1.3.7-2 1l1.3 2a19.7 19.7 0 0 0 6-3c.5-5.2-.9-9.7-3.6-13.7ZM8 15.3c-1.2 0-2.2-1.1-2.2-2.4S6.8 10.5 8 10.5s2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg></button>
+    <button id="w-min" class="wb" aria-label="Minimize"><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M1.5 6h9" stroke="currentColor" stroke-width="1.6"/></svg></button>
+    <button id="w-close" class="wb" aria-label="Close"><svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2 2l8 8M10 2l-8 8" stroke="currentColor" stroke-width="1.6"/></svg></button>
+  </header>
+
+  <main id="home" data-tauri-drag-region>
+    <div id="mark" data-tauri-drag-region>
+      <img id="logo" src="kit/logo.png" width="672" height="102" alt="DELTARUNE" data-tauri-drag-region>
+      <div id="sub" data-tauri-drag-region></div>
+    </div>
+  </main>
+
+  <section id="setup" class="box ctl" hidden><div id="s-rows"></div></section>
+
+  <footer id="foot">
+    <div id="pb-text"><div id="st-main"></div><div id="st-sub"></div></div>
+    <div id="extras" class="ctl"></div>
+    <button id="play" class="ctl" aria-label="Play"><img class="cur" src="kit/heart.png" alt=""><span id="play-lbl"></span></button>
+  </footer>
+  <div id="prog" aria-hidden="true"><i></i></div>
+
+  <section id="panel" class="box" hidden>
+    <div id="p-head"><div id="p-title"></div><button id="p-close" class="lk" aria-label="Close"></button></div>
+    <div id="notes-view" class="in" hidden><div id="n-list"></div><div id="n-detail"></div></div>
+    <div id="config-view" class="in" hidden><div id="c-tabs"></div><div id="c-rows"></div><div id="c-help"></div></div>
+  </section>
+  <div id="fade" aria-hidden="true"></div>
+</div>
+</body>
+</html>
