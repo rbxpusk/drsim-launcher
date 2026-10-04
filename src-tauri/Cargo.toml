@@ -1,6 +1,6 @@
 [package]
 name = "drsim-launcher"
-version = "1.1.0"
+version = "1.1.1"
 description = "DELTARUNE Fight Simulator - desktop launcher (unofficial fan-made project)"
 edition = "2021"
 publish = false
