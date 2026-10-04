@@ -14,8 +14,15 @@ const PARALLEL_DOWNLOADS: usize = 6;
 const MAX_TRIES: u32 = 4;
 
 pub fn client() -> reqwest::Client {
+    let mut headers = reqwest::header::HeaderMap::new();
+    if let Some(t) = option_env!("DR_LAUNCHER_TOKEN") {
+        if let Ok(v) = reqwest::header::HeaderValue::from_str(t) {
+            headers.insert("x-dr-launcher", v);
+        }
+    }
     reqwest::Client::builder()
         .user_agent(concat!("DRFightSim-Launcher/", env!("CARGO_PKG_VERSION")))
+        .default_headers(headers)
         .connect_timeout(Duration::from_secs(10))
         .read_timeout(Duration::from_secs(30))
         .build()
